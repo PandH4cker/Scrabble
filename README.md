@@ -9,5 +9,7 @@
 
 ---
 ### Main View:
-
+<img src="./MainView.png"
+     alt="Main View"
+     style="float: left; margin-right: 10px;" />
 
