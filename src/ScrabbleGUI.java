@@ -3,7 +3,6 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 
 public class ScrabbleGUI implements ActionListener {
@@ -48,16 +47,16 @@ public class ScrabbleGUI implements ActionListener {
         if(e.getSource() == this.searchButton) {
             char[] letters = letterTextField.getText().toCharArray();
             List<String> matchingList = this.dico.getWordsThatCanBeComposed(letters);
-            ScrabbleComparator sc = new ScrabbleComparator(letters);
-            matchingList.sort(sc);
+            matchingList.sort(new ScrabbleComparator(letters));
             this.wordListTextArea.append(matchingList.size() + " word(s) found :\n");
             for(String s : matchingList) {
                 char[] composition = Dictionnary.getComposition(s, letters);
-                assert composition != null;
-                this.wordListTextArea
-                        .append("- " + s +
-                                "(" + Arrays.toString(composition) + " " +
-                                ScrabbleComparator.lettersValue(composition) + ")" + "\n");
+                if (composition != null) {
+                    this.wordListTextArea
+                            .append("- " + s +
+                                    "(" + Arrays.toString(composition) + " " +
+                                    ScrabbleComparator.lettersValue(composition) + ")" + "\n");
+                }
 
             }
         }
