@@ -1,0 +1,4 @@
+*.dico
+*.iml
+.idea/
+out/ 
