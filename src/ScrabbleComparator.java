@@ -62,7 +62,7 @@ public class ScrabbleComparator implements Comparator<String> {
         char[] compositionO1 = Dictionnary.getComposition(Dictionnary.replaceFrenchCharacter(o1), this.letters);
         char[] compositionO2 = Dictionnary.getComposition(Dictionnary.replaceFrenchCharacter(o2), this.letters);
         if(compositionO1 != null && compositionO2 != null)
-            return Integer.compare(lettersValue(compositionO1), lettersValue(compositionO2));
+            return Integer.compare(lettersValue(compositionO2), lettersValue(compositionO1));
         return 0;
     }
 }
