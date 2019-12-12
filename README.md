@@ -1,4 +1,4 @@
-#Scrabble calculator & matching words
+# Scrabble calculator & matching words
 ---
 ## Authors: Raphael Dray.
 ---
